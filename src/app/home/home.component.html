@@ -1,0 +1,121 @@
+<div id="contenedor">
+    <div id="home">
+        <img src="../../assets/mujer/1.jpg" id="inicio" alt="descripción de la imagen">
+        <h1>Clientes</h1>
+    </div>
+    <ul ngbNav [(activeId)]="activeId" class="nav-tabs">
+        <li [ngbNavItem]="1">
+            <a ngbNavLink><span class="material-icons">menu</span>Vista Card</a>
+        </li>
+        <li [ngbNavItem]="2">
+            <a ngbNavLink><span class="material-icons">menu</span>Lista</a>
+        </li>
+        <li [ngbNavItem]="3">
+            <a ngbNavLink><span class="material-icons">control_point</span>Adicionar</a>
+        </li>
+    </ul>
+
+    <div id="cuerpo">
+        <div *ngIf="activeId==1">
+            <!-- Cards -->
+            <app-cards [clientes]="this.clientes"></app-cards>
+        </div>
+        
+        <div *ngIf="activeId==2">
+            <!-- Lista -->
+            <app-lista [clientes]="this.clientes"></app-lista>
+            
+        </div>
+        
+        <div *ngIf="activeId==3">
+            <!-- Agregar -->
+            <div id="container">
+                <form [formGroup]="formulario" (ngSubmit)="agregarCliente()">
+                    <ul>
+                        <li>
+                            <label class="lb-title">Nombres: </label>
+                            <input id="nombre" type="text" formControlName="nombre">
+                            <div *ngIf="formulario.controls['nombre'].invalid && (formulario.controls['nombre'].dirty || formulario.controls['nombre'].touched)" class="alert alert-danger">
+                                <div *ngIf="formulario.controls['nombre'].hasError('required')">
+                                    ✘ El nombre es obligatorio.
+                                </div>
+                                <div *ngIf="formulario.controls['nombre'].hasError('maxlength')">
+                                    ✘ Solo se permiten 100 caracteres.
+                                </div>
+                            </div>
+                            <div *ngIf="!formulario.controls['nombre'].invalid && (formulario.controls['nombre'].dirty || formulario.controls['nombre'].touched)" class="alert alert-success">
+                                ✓ Bien
+                            </div>
+                        </li>
+                        <li>
+                            <label class="lb-title">Apellidos: </label>
+                            <input id="apellido" type="text" formControlName="apellido">
+                            <div *ngIf="formulario.controls['apellido'].invalid && (formulario.controls['apellido'].dirty || formulario.controls['apellido'].touched)" class="alert alert-danger">
+                                <div *ngIf="formulario.controls['apellido'].hasError('required')">
+                                    ✘ El apellido es obligatorio.
+                                </div>
+                                <div *ngIf="formulario.controls['apellido'].hasError('maxlength')">
+                                    ✘ Solo se permiten 100 caracteres.
+                                </div>
+                            </div>
+                            <div *ngIf="!formulario.controls['apellido'].invalid && (formulario.controls['apellido'].dirty || formulario.controls['apellido'].touched)" class="alert alert-success">
+                                ✓ Bien
+                            </div>
+                        </li>
+                        <li>
+                            <label class="lb-title">Genero: </label>
+                            <ul id="radios">
+                                <li>
+                                    <input class="form-check-input" type="radio" formControlName="genero" id="rad1" value="1">Mujer
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" formControlName="genero" id="rad2" value="2">Hombre
+                                </li>
+                                <li>
+                                    <input class="form-check-input" type="radio" formControlName="genero" id="rad3" value="3">Otro
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <label class="lb-title">País: </label>
+                            <select formControlName="pais">
+                                <option value="0">- Select -</option>
+                                <option value="ch">Chile</option>
+                                <option value="arg">Argentina</option>
+                                <option value="pe">Perú</option>
+                            </select>
+                            <div *ngIf="formulario.controls['pais'].invalid && (formulario.controls['pais'].dirty || formulario.controls['pais'].touched)" class="alert alert-danger">
+                                <div *ngIf="formulario.controls['pais'].hasError('required') || (this.formulario.value.pais == 0)">
+                                    ✘ El país es obligatorio.
+                                </div>
+                            </div>
+                            <div *ngIf="!formulario.controls['pais'].invalid && (this.formulario.value.pais != '0') && (formulario.controls['pais'].dirty || formulario.controls['pais'].touched)" class="alert alert-success">
+                                ✓ Bien
+                            </div>
+                        </li>
+                        <li>
+                            <label class="lb-title">Ciudad: </label>
+                            <input id="ciudad" type="text" formControlName="ciudad">
+                            <div *ngIf="formulario.controls['ciudad'].invalid && (formulario.controls['ciudad'].dirty || formulario.controls['ciudad'].touched)" class="alert alert-danger">
+                                <div *ngIf="formulario.controls['ciudad'].hasError('required')">
+                                    ✘ La ciudad es obligatoria.
+                                </div>
+                                <div *ngIf="formulario.controls['ciudad'].hasError('maxlength')">
+                                    ✘ Solo se permiten 100 caracteres.
+                                </div>
+                            </div>
+                            <div *ngIf="!formulario.controls['ciudad'].invalid && (formulario.controls['ciudad'].dirty || formulario.controls['ciudad'].touched)" class="alert alert-success">
+                                ✓ Bien
+                            </div>
+                        </li>
+                        <li id="botones">
+                            <button type="reset" class="btn btn-light">Cancelar</button>
+                            <button type="submit" class="btn btn-light" [disabled]="formulario.invalid">Crear</button>
+                        </li>
+                    </ul>
+                </form>
+            </div>     
+        </div>
+    </div>
+    
+</div>

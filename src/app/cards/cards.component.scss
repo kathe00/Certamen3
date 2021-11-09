@@ -1,0 +1,27 @@
+div ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 0px;
+    justify-content: flex-start;
+}
+
+div ul li{
+    max-width: 350px;
+    width: 100%;
+    margin: 20px;
+}
+
+.card{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: center;
+    padding-left: 10px;
+    border: 2px solid rgb(73, 76, 97);
+}
+
+img{
+    max-width: 120px;
+}

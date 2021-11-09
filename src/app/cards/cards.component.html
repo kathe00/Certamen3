@@ -1,0 +1,19 @@
+<div class="container">
+    <ul id="tarjetas">
+        <li *ngFor="let item of clientes">
+            <div class="card mb-3">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="{{item.foto}}" class="img-fluid rounded-start" alt="descripción">
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{item.nombre}} {{item.apellido}}</h5>
+                      <p class="card-text">{{item.pais}}, {{item.ciudad}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,114 @@
+#contenedor{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(209, 205, 245);
+    width: 100%;
+}
+
+img{
+    width: 200px;
+}
+
+#home{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 1000px;
+    width: 90%;
+    background-color: white;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+ul{
+    max-width: 1000px;
+    width: 90%;
+    background-color: white;
+    padding: 5px;
+}
+
+a{
+    display: flex;
+    color: rgb(73, 76, 97);
+}
+
+ul li .active{
+    color: rgb(170, 140, 190);
+}
+
+span{
+    margin-right: 5px;
+}
+
+/* --------------------- Contenido ----------------------- */
+
+#cuerpo{
+    background-color: white;
+    max-width: 1000px;
+    width: 90%;
+    padding: 30px;
+}
+
+.titulo {
+    font-weight: bold;
+}
+
+/* --------------------- Agregar ----------------------- */
+
+#cuerpo div div form ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    max-width: 390px;
+    flex-direction: column;
+}
+
+#cuerpo div div form ul li {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.lb-title{
+    font-weight: bold;
+}
+
+#radios {
+    margin-left: 15px;
+}
+
+.btn {
+    max-width: 100px;
+    border: 1px solid black;
+    margin-left: 10px;
+}
+
+#botones {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row !important;
+    justify-content: flex-end;
+}
+
+.alert-danger {
+    padding: 5px;
+    margin: 0px;
+    border: white;
+    background-color: white;
+    color: rgb(204, 75, 75);
+}
+
+.alert-success {
+    padding: 5px;
+    margin: 0px;
+    border: white;
+    background-color: white;
+    color: rgb(51, 172, 101);
+}

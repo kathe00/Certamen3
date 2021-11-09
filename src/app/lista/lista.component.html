@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm" #nombre>
+            <p class="titulo">Nombre Completo</p>
+            <ul id="nombres">
+                <li *ngFor="let item of clientes">
+                    <p>{{item.nombre}} {{item.apellido}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm" #genero>
+            <p class="titulo">Género</p>
+            <ul id="generos">
+                <li *ngFor="let item of clientes">
+                    <p *ngIf="item.genero == 1">Mujer</p>
+                    <p *ngIf="item.genero == 2">Hombre</p>
+                    <p *ngIf="item.genero == 3">Otro</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm" #pais>
+            <p class="titulo">País</p>
+            <ul id="paises">
+                <li *ngFor="let item of clientes">
+                    <p>{{item.pais}}</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col-sm" #ciudad>
+            <p class="titulo">Ciudad</p>
+            <ul id="ciudades">
+                <li *ngFor="let item of clientes">
+                    <p>{{item.ciudad}}</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
